@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/example/stepDefinitions",
         dryRun = false,
-       tags = "@c_education_2"
+       tags = "@regression"
         // tags = "@Leia or @smoke" -> daha fazla and veya or kullanilabilir.
         //  tags = "@Login and @smoke"
         //  tags = "@regression and not @Rosa" -> Rosa haric testlerin hepsi calisir
