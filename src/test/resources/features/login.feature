@@ -1,3 +1,4 @@
+@regression
 Feature: Login Functionality
   # user story = feature
   # test case = scenario
@@ -5,12 +6,13 @@ Feature: Login Functionality
 
 #  Background:
 #    Given The user is on the login page
-
+  @Leia @Login
   Scenario: Login as Leia Organa
     Given The user is on the login page
     When The user enters Leia's credentials
     Then The user should be able to login
 
+  @HanSolo @Login
   Scenario: Login as HanSolo
     Given The user is on the login page
     When The user enters HanSolo's credentials
@@ -18,15 +20,15 @@ Feature: Login Functionality
 
     # class task :
   # new scenario: Login as Rosa
+  @Rosa @Login @database
   Scenario: Login as Rosa
     Given The user is on the login page
     When The user enters Rosa's credentials
     Then The user should be able to login
 
-  Scenario: Login as Obiwan
+
+  @John @Login @Smoke
+  Scenario: Login as John
     Given The user is on the login page
-    When The user enters Obiwan's email
-    And The user enters Obiwans's password
-    And The user clicks on login button
+    When The user enters John's credentials
     Then The user should be able to login
-    And The user should be able to see own username

@@ -6,8 +6,18 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
+        plugin = {
+                "json:target/cucumber.json",
+                "html:target/default-html-reports.html",
+                "rerun:target/rerun.txt"
+        },
         features = "src/test/resources/features",
-        glue = "com/example/stepDefinitions"
+        glue = "com/example/stepDefinitions",
+        dryRun = false,
+       tags = "@c_education_2"
+        // tags = "@Leia or @smoke" -> daha fazla and veya or kullanilabilir.
+        //  tags = "@Login and @smoke"
+        //  tags = "@regression and not @Rosa" -> Rosa haric testlerin hepsi calisir
 )
 
 
