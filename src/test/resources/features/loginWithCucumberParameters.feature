@@ -11,7 +11,7 @@ Feature: Login Tests with cucumber parameters
     Then The user should be able to login
     And Verify that username "leia" is displayed on dashboard page
 
-  @wip @number
+  @number
   Scenario: Login as Mike- Cucumber Parameters
   #  Given The user is on the login page
     When The user logs in with using credentials "mike@gmail.com" and "mike1234"
@@ -23,7 +23,7 @@ Feature: Login Tests with cucumber parameters
 # class task
   #login as Rosa with cucumber parameters
 
-  @wip @c_maven_2
+  @c_maven_2
   Scenario: Login as Rosa- Cucumber Parameters
    # Given The user is on the login page
     When The user logs in with using credentials "rosa@test.com" and "Test123456"
@@ -37,14 +37,26 @@ Feature: Login Tests with cucumber parameters
       | Leia123456     |
     Then The user should be able to login
 
-    @dnm @rerun
+  @dnm @rerun
   Scenario Outline: Login with list DDF
     When The user logins with following credentials
       | <userEmail> |
       | <password>  |
     Then The user should be able to login
     Examples:
-      | userEmail | password |
-      | rosa@test.com | Test123456 |
-      | mike@gmail.com | mike1234 |
+      | userEmail      | password   |
+      | rosa@test.com  | Test123456 |
+      | mike@gmail.com | mike1234   |
       | leia@gmail.com | Leia123456 |
+
+
+  Scenario Outline: Login with different names
+   # Given The user is on the login page
+    When The user logs in with using credentials "<userEmail>" and "<password>"
+    Then The user should be able to login
+    And Verify that username "<name>" is displayed on dashboard page
+    Examples:
+      | userEmail      | password   | name |
+      | rosa@test.com  | Test123456 | Rosa |
+      | mike@gmail.com | mike1234   | mike |
+      | leia@gmail.com | Leia123456 | leia |

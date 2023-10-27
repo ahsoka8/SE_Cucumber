@@ -33,7 +33,7 @@ public class Driver {
                     break;
 
                 case "firefox":
-                    WebDriverManager.firefoxdriver().setup();
+                   // WebDriverManager.firefoxdriver().setup(); selenium 4.6 dan itibaren bongarcia kütüpahneisne gerek yok
                     driver = new FirefoxDriver();
                     break;
 

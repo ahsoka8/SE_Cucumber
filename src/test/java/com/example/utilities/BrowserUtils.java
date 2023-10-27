@@ -16,6 +16,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 public class BrowserUtils {
     /*
@@ -413,7 +414,11 @@ public class BrowserUtils {
     }
 
 
-
+    public static List<Map<String,String >> getExcelData(String path, String sheetName){
+        ExcelUtil excelUtil=new ExcelUtil(path, sheetName);
+        List<Map<String, String>> dataList = excelUtil.getDataList();
+        return dataList;
+    }
 
 }
 

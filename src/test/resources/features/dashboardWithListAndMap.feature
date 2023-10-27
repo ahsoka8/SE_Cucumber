@@ -58,3 +58,23 @@ Feature: Dashboard Menu Checks
     # Class Task f2 HW
     # go to web page -> https://demoqa.com/
     # verify that user see following menu list elements, forms,...
+
+  @c_ScenarioOutline
+  Scenario Outline: Example-2 Map for Cucumber
+   #   Given The user is on the login page
+    When The user logs in following menu
+      | usermail | <userEmail> |
+      | password | <password>  |
+    Then The user should be able to login
+    And The user should be able to see following menu
+      | Dashboard  |
+      | Developers |
+      | Components |
+      | Forms      |
+      | JavaScript |
+      | <name>     |
+    Examples:
+      | userEmail      | password   | name |
+      | rosa@test.com  | Test123456 | Rosa |
+      | mike@gmail.com | mike1234   | mike |
+      | leia@gmail.com | Leia123456 | leia |
